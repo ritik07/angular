@@ -1,0 +1,5 @@
+<!-- <app-add-form class="{{showForm ? '':'dis-none'}}" (onAddTask)="addTask($event)"></app-add-form> -->
+<app-add-form *ngIf="showForm" (onAddTask)="addTask($event)"></app-add-form>
+<app-task-item *ngFor="let task of tasks" [task]="task" (onDeleteTask)="deleteTask(task)"
+  (onToggleReminder)="toggleReminder(task)">
+</app-task-item>
